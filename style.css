@@ -7,6 +7,7 @@ body {
     padding-top: 45vh;
     font-size:12em;
     font-weight: 800;
+    user-select: none;
 }
 
 .moving-element {
