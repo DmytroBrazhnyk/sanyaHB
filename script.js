@@ -1,6 +1,11 @@
 class MovingElement {
     constructor() {
         this.element = document.createElement('div');
+        this.element.innerHTML=`
+        <h2>Саня</h2>
+        <h2 class = "big_word">ХУЙ</h2>
+        <h2>соси</h2>
+    `;
         this.element.classList.add('moving-element');
         document.body.appendChild(this.element);
 
@@ -28,6 +33,8 @@ class MovingElement {
         this.element.style.top = rect.top + 1 * this.directionY + 'px';
     }
 }
+
+setInterval(() =>new MovingElement(), 1000 / 3);
 
 window.addEventListener("click", (event)=> new MovingElement());
 window.addEventListener('beforeunload', () =>{
