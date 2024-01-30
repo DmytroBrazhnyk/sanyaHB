@@ -5,7 +5,7 @@ body {
     height: 100%;
     text-align: center;
     padding-top: 45vh;
-    font-size:12em;
+    font-size: 8vw;
     font-weight: 800;
     user-select: none;
 }
@@ -15,11 +15,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 200px;
+    height: 200px;
     background-color: blue;
     position: absolute;
     user-select: none;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 400;
     color: black;
 }

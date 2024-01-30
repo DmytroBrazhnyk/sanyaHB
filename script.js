@@ -9,13 +9,13 @@ class MovingElement {
         this.element.classList.add('moving-element');
         document.body.appendChild(this.element);
 
-        this.element.style.left = Math.random() * (window.innerWidth - 100) + 'px';
-        this.element.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+        this.element.style.left = Math.random() * (window.innerWidth - 200) + 'px';
+        this.element.style.top = Math.random() * (window.innerHeight - 200) + 'px';
 
         this.directionX = this.getRandomDirection();
         this.directionY = this.getRandomDirection();
 
-        setInterval(() => this.moveElement(), 60 / 5); 
+        setInterval(() => this.moveElement(), 50 / 7); 
         setInterval(() => this.randomizeBg(), 80); 
     }
 
