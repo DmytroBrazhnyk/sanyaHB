@@ -9,13 +9,42 @@ class MovingElement {
         this.element.classList.add('moving-element');
         document.body.appendChild(this.element);
 
-        this.element.style.left = Math.random() * (window.innerWidth - 50) + 'px';
-        this.element.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+        this.element.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+        this.element.style.top = Math.random() * (window.innerHeight - 100) + 'px';
 
-        this.directionX = 1;
-        this.directionY = 1;
+        this.directionX = this.getRandomDirection();
+        this.directionY = this.getRandomDirection();
 
-        setInterval(() => this.moveElement(), 70 / 5); // Рух кожні 200 мілісекунд (5 пікселів в секунду)
+        setInterval(() => this.moveElement(), 60 / 5); 
+        setInterval(() => this.randomizeBg(), 80); 
+    }
+
+    randomizeBg(){
+        const colorfulObject = {
+            1: 'red',
+            2: 'orange',
+            3: 'yellow',
+            4: 'green',
+            5: 'pink',      
+            6: 'purple',
+            7: '#ff00ff',   
+            8: '#00ffff',   
+            9: 'lightgreen', 
+            10: 'yellowgreen'
+        };
+
+        const randomKey = Math.floor(Math.random() * 10) + 1;
+        const randomColor = colorfulObject[randomKey];
+        this.element.style.backgroundColor = randomColor;
+    }
+    getRandomDirection() {
+        const randomNumber = Math.floor(Math.random() * 100) + 1; 
+    
+        if (randomNumber < 50) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 
     moveElement() {
@@ -34,7 +63,7 @@ class MovingElement {
     }
 }
 
-setInterval(() =>new MovingElement(), 1000 / 3);
+setInterval(() =>new MovingElement(), 2000 / 3);
 
 window.addEventListener("click", (event)=> new MovingElement());
 window.addEventListener('beforeunload', () =>{
@@ -42,6 +71,25 @@ window.addEventListener('beforeunload', () =>{
     const newWindow = window.open(url, '_blank');
 })
 
+function randomizeTextColor() {
+    const colorfulObject = {
+        1: 'red',
+        2: 'orange',
+        3: 'yellow',
+        4: 'green',
+        5: 'pink',      
+        6: 'purple',
+        7: '#ff00ff',   
+        8: '#00ffff',   
+        9: 'lightgreen', 
+        10: 'yellowgreen'
+    };
+
+    const randomKey = Math.floor(Math.random() * 10) + 1;
+    const randomColor = colorfulObject[randomKey];
+    document.body.style.color = randomColor;
+}
+setInterval(() => randomizeTextColor(), 200);
 // new MovingElement();
 // new MovingElement();
 // new MovingElement();

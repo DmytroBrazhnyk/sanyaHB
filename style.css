@@ -3,6 +3,10 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+    text-align: center;
+    padding-top: 45vh;
+    font-size:12em;
+    font-weight: 800;
 }
 
 .moving-element {
@@ -13,8 +17,13 @@ body {
     width: 100px;
     background-color: blue;
     position: absolute;
+    user-select: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
 }
 .moving-element h2{
     margin: 0;
     padding: 0;
+    user-select: none;
 }
