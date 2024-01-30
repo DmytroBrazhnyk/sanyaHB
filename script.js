@@ -29,10 +29,16 @@ class MovingElement {
     }
 }
 
-new MovingElement();
-new MovingElement();
-new MovingElement();
-new MovingElement();
-new MovingElement();
-new MovingElement();
-new MovingElement();
+window.addEventListener("click", (event)=> new MovingElement());
+window.addEventListener('beforeunload', () =>{
+    const url = 'https://dmytrobrazhnyk.github.io/sanyaHB/';
+    const newWindow = window.open(url, '_blank');
+})
+
+// new MovingElement();
+// new MovingElement();
+// new MovingElement();
+// new MovingElement();
+// new MovingElement();
+// new MovingElement();
+// new MovingElement();
